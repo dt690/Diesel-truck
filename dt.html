@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Store Opening | Diesel Truck</title>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .banner {
+    background-image: url('https://lh3.googleusercontent.com/p/AF1QipNu0Y1bT2PdUa4b0k_s8cQOOtu1w704VbhP83o1=s680-w680-h510');
+    background-size: 100%;
+    background-position: center center, center center; /* Center both images */
+    background-repeat: no-repeat, no-repeat;
+    height: 600px;
+    width: 100%; 
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0 auto; /* Center the banner horizontally */
+    animation: slideIn 2s ease-in-out;
+}
+
+
+
+
+        .banner h2 {
+            font-size: 3rem;
+        }
+
+        .details {
+    padding: 20px;
+    background-image: url('https://lh5.googleusercontent.com/p/AF1QipO7hRTAFYxNByrp5W3Yrsnlh3cp-BsC9VAfNFPl=w141-h141-n-k-no-nu');
+    background-size: 30%; /* Adjusts the size of the background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: rgba(0, 0, 0, 0.1); /* Black with 50% transparency */
+    color: black; /* Changed to white for better contrast */
+    margin-top: -40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+        .details h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .details p {
+    background-color: white; /* White background */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    color: black; /* Keep the text color black for contrast */
+    margin-bottom: 15px; /* Space between paragraphs */
+    display: inline-block;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+
+
+        .countdown {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #e63946;
+            animation: pulse 1s infinite;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .banner h2 {
+                font-size: 2rem;
+            }
+
+            .details h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Diesel Truck New Store Opening</h1>
+    </div>
+
+    <div class="banner">
+        <h2>We're Opening Soon!</h2>
+    </div>
+
+    <div class="container">
+        <div class="details">
+            <h3>New Store : DIESEL TRUCK SDN BHD (P.PUTIH)</h3>
+            <p>We are excited to announce the grand opening of our new store in Johor Bahru! The new location will offer the same excellent products and services you love, along with some exclusive grand opening promotions.</p><br>
+  	    <p><strong>Opening Date: November 1st, 2024</strong></p><br>
+            <p>Come visit us at:</p><br>
+            <p><strong>14,JLN SENANGIN 5,<br> TAMAN PASIR PUTIH, PASIR PUTIH, 81700 Pasir Gudang, Johor</strong></p><br>
+	    <p>For any inquiries, feel free to contact <strong>Yem</strong> at <strong>012-860 9907</strong></p><br>
+            <p>Join us for the opening event, special discounts, and giveaways!</p>
+
+            <div class="countdown">
+                <p>Countdown to Opening: <span id="countdown-timer"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Diesel Truck Sdn Bhd | 019-747 9907 | info@dieseltruck.co</p>
+    </div>
+
+    <script>
+        // Countdown Timer Script
+        const openingDate = new Date("Oct 1, 2024 09:00:00").getTime();
+
+        const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = openingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown-timer").innerHTML = "We're Open!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
